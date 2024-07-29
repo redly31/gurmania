@@ -19,10 +19,18 @@ export const pizzasApi = createApi({
             ]
           : [{ type: "Pizzas", id: "LIST" }],
     }),
+    addPizza: build.mutation({
+      query: (body) => ({
+        url: "pizzas",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: [{ type: "Pizzas", id: "LIST" }],
+    }),
   }),
 });
 
-export const { useGetPizzasQuery } = pizzasApi;
+export const { useGetPizzasQuery, useAddPizzaMutation } = pizzasApi;
 
 
 

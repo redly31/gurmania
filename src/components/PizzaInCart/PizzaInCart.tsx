@@ -1,9 +1,10 @@
 import { FaTrashCan } from "react-icons/fa6";
-import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
-import { IPizzaInCart } from "../../types/PizzaInCart";
+import { IPizza } from "../../types/Pizza";
+import { useAppDispatch } from "../../hooks/redux";
+import { deletePizzaFromCart } from "../../store/pizzasInCartSlice";
 
-export default function PizzaInCart(pizza: IPizzaInCart) {
+export default function PizzaInCart(pizza: IPizza) {
+  const dispatch = useAppDispatch()
   return (
     <div className="flex w-[500px] justify-between my-2.5 items-center">
       <div className="flex">
@@ -11,20 +12,9 @@ export default function PizzaInCart(pizza: IPizzaInCart) {
         &nbsp; &#8212; &nbsp;
         <h3>{pizza.cost} ₽</h3>
       </div>
-      <div className="flex items-center">
-        <button className="p-2.5 btn-primary">
-          <FaTrashCan color="white" />
-        </button>
-        <div className="p-2.5 flex items-center gap-5">
-          <button className="p-2.5 btn-primary">
-            <FaAngleLeft />
-          </button>
-          <h3>{pizza.count}</h3>
-          <button className="p-2.5 btn-primary">
-            <FaAngleRight />
-          </button>
-        </div>
-      </div>
+      <button className="p-2.5 btn-primary" onClick={() => dispatch(deletePizzaFromCart(pizza.id))}>
+        <FaTrashCan color="white" />
+      </button>
     </div>
   );
 }

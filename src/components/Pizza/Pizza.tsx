@@ -1,6 +1,16 @@
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { IPizza } from "../../types/Pizza";
+import { addPizzaToCart } from "../../store/pizzasInCartSlice";
 
 export default function Pizza(pizza: IPizza) {
+  
+  const dispatch = useAppDispatch();
+
+  const addNewPizzaToCart = (pizza: IPizza) => {
+    dispatch(addPizzaToCart(pizza))
+  };
+
   return (
     <div className="p-2.5 flex flex-col justify-between">
       <div className="">
@@ -14,7 +24,12 @@ export default function Pizza(pizza: IPizza) {
       </div>
       <div className="flex justify-between items-center mt-5">
         <h3>{pizza.cost} ₽</h3>
-        <button className="btn-primary py-2 px-5">В корзину</button>
+        <button
+          className="btn-primary py-2 px-5"
+          onClick={() => addNewPizzaToCart(pizza)}
+        >
+          В корзину
+        </button>
       </div>
     </div>
   );
