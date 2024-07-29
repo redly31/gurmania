@@ -11,7 +11,7 @@ export default function Payment() {
 
   return (
     <div className="mt-5">
-        <h2>Оплата</h2>
+        <h2 className="">Оплата</h2>
         <h3 className="mt-5">Итого: {totalCost} ₽</h3>
         <button className="mt-5 py-2 px-5 btn-primary">Перейти к оплате</button>
     </div>
