@@ -1,5 +1,5 @@
-import Payment from "../components/PizzaInCart/Payment"
-import PizzaInCartList from "../components/PizzaInCart/PizzaInCartList"
+import Payment from "../components/Cart/Payment"
+import PizzaInCartList from "../components/Cart/PizzaInCartList"
 
 export default function Cart() {
 

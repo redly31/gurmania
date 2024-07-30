@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { summTotalCost } from "../../helpers/summTotalCost";
 import { useAppSelector } from "../../hooks/redux";
 
@@ -10,10 +11,10 @@ export default function Payment() {
     }
 
   return (
-    <div className="mt-5">
+    <div className="my-5">
         <h2 className="">Оплата</h2>
         <h3 className="mt-5">Итого: {totalCost} ₽</h3>
-        <button className="mt-5 py-2 px-5 btn-primary">Перейти к оплате</button>
+        <Link to='/cart/payment'><button className="mt-5 py-2 px-5 btn-primary">Перейти к оплате</button></Link>
     </div>
   )
 }

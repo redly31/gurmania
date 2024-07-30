@@ -1,4 +1,4 @@
-import PizzaList from "../components/Pizza/PizzaList"
+import PizzaList from "../components/Home/PizzaList"
 
 export default function Home() {
 

@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useState } from "react";
 import { convertBase64 } from "../helpers/convertBase64";
 import { useForm } from "react-hook-form"
 import { useAddPizzaMutation } from "../store/pizzasApi";
@@ -6,8 +6,7 @@ import { nanoid } from "nanoid";
 
 export default function NewPizzaForm() {
   const [image, setImage] = useState<string | ArrayBuffer | null>('')
-  const [addPizza, status] = useAddPizzaMutation()
-  const uniqueId = useId()
+  const [addPizza] = useAddPizzaMutation()
   const uploadImage = async (e: any) => {
     const file = e.target.files[0]
     const base64: any = await convertBase64(file)
@@ -25,8 +24,6 @@ export default function NewPizzaForm() {
       await addPizza({...data, image, id: nanoid()})
     }
   }
-
-  console.log(status.isSuccess)
 
   return (
     <div className="">

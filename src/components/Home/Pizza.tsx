@@ -21,6 +21,7 @@ export default function Pizza(pizza: IPizza) {
         />
         <h3>{pizza.name}</h3>
         <p className="text-gray-600 mt-2.5">{pizza.ingredients}</p>
+        <p className="text-gray-600">{pizza.weight} грамм, {pizza.calories} ккал</p>
       </div>
       <div className="flex justify-between items-center mt-5">
         <h3>{pizza.cost} ₽</h3>
