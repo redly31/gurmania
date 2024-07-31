@@ -4,10 +4,14 @@ import { useGetOrdersQuery } from "../../store/ordersApi";
 
 export default function Statistics() {
 
-  const {data: orders, isLoading} = useGetOrdersQuery('')
+  const {data: orders = [], isLoading, isError} = useGetOrdersQuery('')
 
   if(isLoading) {
     return <h2 className="mt-5">Загрузка...</h2>
+  }
+
+  if (isError) {
+    return <h2 className="mt-5">Ошибка. Не удалось получить данные</h2>
   }
   
   const inactiveOrders = findInactiveOrders(orders)

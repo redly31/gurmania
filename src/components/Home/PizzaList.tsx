@@ -3,10 +3,14 @@ import Pizza from "./Pizza";
 import { useGetPizzasQuery } from "../../store/pizzasApi";
 
 export default function PizzaList() {
-  const {data: pizzas, isLoading} = useGetPizzasQuery('')
+  const {data: pizzas = [], isLoading, isError} = useGetPizzasQuery('')
 
   if(isLoading) {
     return <h2 className="mt-5">Загрузка...</h2>
+  }
+
+  if (isError) {
+    return <h2 className="mt-5">Ошибка. Не удалось получить данные</h2>
   }
 
   return (

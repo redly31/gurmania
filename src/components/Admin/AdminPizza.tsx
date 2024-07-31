@@ -4,7 +4,7 @@ import { useDeletePizzaMutation } from "../../store/pizzasApi";
 
 export default function AdminPizza(pizza: IPizza) {
   const [deletePizza] = useDeletePizzaMutation()
-  const removePizza = async (id: string) => {
+  const removePizza = (id: string) => {
     deletePizza(id)
   };
 

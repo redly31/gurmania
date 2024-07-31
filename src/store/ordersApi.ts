@@ -34,10 +34,18 @@ export const ordersApi = createApi({
       }),
       invalidatesTags: [{ type: "Orders", id: "LIST" }],
     }),
+    completeOrder: build.mutation({
+      query: order => ({
+        url: `/orders/${order.id}`,
+        method: 'PATCH',
+        body: order
+      }),
+      invalidatesTags: [{ type: "Orders", id: "LIST" }],
+    }),
   }),
 });
 
-export const { useGetOrdersQuery, useAddOrderMutation, useDeleteOrderMutation } = ordersApi;
+export const { useGetOrdersQuery, useAddOrderMutation, useDeleteOrderMutation, useCompleteOrderMutation } = ordersApi;
 
 
 

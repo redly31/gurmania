@@ -2,8 +2,9 @@ export interface IOrder {
     id: string;
     pizzas: IOrderPizza[];
     ordertime: string;
-    address: String;
+    address: string;
     isActive: boolean;
+    paid: boolean;
 }
 
 export interface IOrderPizza {
