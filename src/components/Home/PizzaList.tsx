@@ -13,6 +13,8 @@ export default function PizzaList() {
     return <h2 className="mt-5">Ошибка. Не удалось получить данные</h2>
   }
 
+  console.log(pizzas)
+  
   return (
     <div className="mt-5">
       <h2>Пиццы ({pizzas.length})</h2>

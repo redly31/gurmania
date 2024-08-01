@@ -21,7 +21,7 @@ export default function NewPizzaForm() {
   const createNewPizza = async (data: any) => {
     if(image === '') { null }
     else {
-      await addPizza({...data, image, id: nanoid()})
+      await addPizza({...{...data, weight: Number(data.weight), calories: Number(data.calories), cost: Number(data.cost)}, image, id: nanoid()})
     }
   }
 
