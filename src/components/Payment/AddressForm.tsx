@@ -28,7 +28,7 @@ export default function AddressForm() {
   return (
     <div className="">
       <h2 className="mt-5">Укажите адрес доставки</h2>
-      <form onSubmit={handleSubmit(createNewPizza)} className="flex flex-col w-1/2 gap-2 mt-5 items-start">
+      <form onSubmit={handleSubmit(createNewPizza)} className="flex flex-col w-full md:w-1/2 gap-2 mt-5 items-start">
         <input type="text" {...register("address", { required: true })} placeholder="Город, улица, дом, подъезд, квартира"/>
         <button className="btn-primary px-10 py-2">Оплатить</button>
       </form>

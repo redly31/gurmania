@@ -43,7 +43,7 @@ export default function Orders() {
         )}
       </div>
       {isActiveOrdersOpen && (
-        <div className="grid grid-cols-3 mt-5 gap-5">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
           {activeOrders.map((order: IOrder) => (
             <Order key={order.id} {...order} />
           ))}
@@ -69,7 +69,7 @@ export default function Orders() {
         )}
       </div>
       {isInactiveOrdersOpen && (
-        <div className="grid grid-cols-3 mt-5 gap-5">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
           {inactiveOrders.map((order: IOrder) => (
             <Order key={order.id} {...order} />
           ))}

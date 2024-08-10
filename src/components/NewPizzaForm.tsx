@@ -28,7 +28,7 @@ export default function NewPizzaForm() {
   return (
     <div className="">
       <h2 className="mt-5">Создать новую пиццу</h2>
-      <form onSubmit={handleSubmit(createNewPizza)} className="flex flex-col w-1/2 gap-2 mt-5 items-start">
+      <form onSubmit={handleSubmit(createNewPizza)} className="flex flex-col w-full sm:w-1/2 gap-2 mt-5 items-start">
         <input type="text" {...register("name", { required: true })} placeholder="Название"/>
         <input type="text" {...register("ingredients", { required: true })} placeholder="Ингредиенты"/>
         <input type="text" {...register("weight", { required: true })} placeholder="Вес (грамм)"/>

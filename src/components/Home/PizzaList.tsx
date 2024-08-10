@@ -18,7 +18,7 @@ export default function PizzaList() {
   return (
     <div className="mt-5">
       <h2>Пиццы ({pizzas.length})</h2>
-      <div className="grid grid-cols-3 mt-5 gap-5">
+      <div className="grid grid-cols-1 min-[450px]:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
         {pizzas.map((pizza: IPizza) => (
           <Pizza {...pizza} key={pizza.id} />
         ))}

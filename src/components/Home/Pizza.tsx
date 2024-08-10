@@ -16,7 +16,7 @@ export default function Pizza(pizza: IPizza) {
       <div className="">
         <img
           src={pizza.image}
-          className="pointer-events-none h-56 mx-auto"
+          className="pointer-events-none h-48 mx-auto sm:h-56"
           alt=""
         />
         <h3>{pizza.name}</h3>

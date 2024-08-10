@@ -10,9 +10,7 @@ export default function AdminPizzaList() {
 
   if (isLoading) {
     return <h2 className="mt-5">Загрузка...</h2>
-  }
-
-  if (isError) {
+  } if(isError) {
     return <h2 className="mt-5">Ошибка. Не удалось получить данные</h2>
   }
 
@@ -27,7 +25,7 @@ export default function AdminPizzaList() {
       </div>
       
       {isOpen &&
-        <div className="grid grid-cols-3 mt-5 gap-5">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
           {pizzas.map((pizza: IPizza) => (
             <AdminPizza {...pizza} key={pizza.id} />
           ))}
